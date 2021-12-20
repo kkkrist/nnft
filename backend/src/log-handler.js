@@ -100,6 +100,12 @@ const logHandler = async (req, res, next) => {
       }
     }
 
+    const reasonMatch = error.message.match(/reason="(.*?)", code/)
+    if (reasonMatch) {
+      res.type('json')
+      return res.status(400).send({ error: reasonMatch[1] })
+    }
+
     if (error.message.includes('INVALID_ARGUMENT')) {
       return res.status(400).send(JSON.stringify({ error: error.message }))
     }
