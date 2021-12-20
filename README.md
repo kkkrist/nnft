@@ -12,7 +12,7 @@ The contract is meant to be deployed on the Rinkeby Ethereum test network.
 
 ## Backend
 
-The backend constists of a Node.js server to provide endpoints for token meta data, token image referenced therein and retrieval of chat log represented by a token. Requests to the latter need to be signed by the current token owner. See source code for details.
+The backend constists of a Node.js server to provide endpoints for token meta data, token image referenced therein and retrieval of chat log represented by a token. Requests to the latter need to be signed by the current token owner. The token image endpoint requires [ImageMagick](https://imagemagick.org/index.php) to be available on the host. See source code for details.
 
 Running in `development` mode, a local Ethereum node running on port 8545 is assumed and queried directly. When using public networks in `production` mode, the contract is queried using external service APIs. Put credentials for these services ([Etherscan](https://etherscan.io/) and [Infura](https://infura.io/)) in a local `.env` file to make them available as environment variables:
 
