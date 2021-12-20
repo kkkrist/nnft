@@ -1,0 +1,7 @@
+.env
+artifacts
+cache
+frontend/src/data/address.json
+frontend/src/data/artifact.json
+node_modules
+build

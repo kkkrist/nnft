@@ -1,0 +1,34 @@
+{
+  "name": "metamask-playground/frontend",
+  "version": "1.0.0",
+  "eslintConfig": {
+    "extends": "preact",
+    "ignorePatterns": [
+      "build/"
+    ]
+  },
+  "scripts": {
+    "build": "SNOWPACK_PUBLIC_BACKEND_URI=https://nnft.club/api SNOWPACK_PUBLIC_CHAIN_ID=0x4 SNOWPACK_PUBLIC_NETWORK=Rinkeby snowpack build",
+    "serve": "./node_modules/serve/bin/serve.js -s build -l 8080",
+    "start": "SNOWPACK_PUBLIC_BACKEND_URI=http://localhost:3002 SNOWPACK_PUBLIC_CHAIN_ID=0x539 SNOWPACK_PUBLIC_NETWORK=localhost snowpack dev"
+  },
+  "author": {
+    "email": "info@mundpropaganda.net",
+    "name": "Christian Mund"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-preact": "^1.2.0",
+    "snowpack": "^3.8.8"
+  },
+  "dependencies": {
+    "@metamask/onboarding": "^1.0.1",
+    "@twind/preact": "^1.0.5",
+    "dayjs": "^1.10.7",
+    "ethers": "^5.5.1",
+    "htm": "^3.1.0",
+    "preact": "^10.5.15",
+    "serve": "^13.0.2"
+  }
+}
