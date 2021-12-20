@@ -52,7 +52,7 @@ The `fund.js` script simply transfers 10 ETH from the contract owner address to 
 
 ## Frontend
 
-The	frontend is a 100% custom single-page app rendered with [Preact](https://preactjs.com/). It also uses
+The	frontend is a 100% custom single-page web app rendered with [Preact](https://preactjs.com/). It also uses
 
 - [Twind](https://twind.dev/) for leight-weight styling
 - [Day.js](https://day.js.org/) to make handling dates easier
