@@ -26,7 +26,7 @@ Running in `development` mode, a local Ethereum node running on port 8545 is ass
 
 The contract is based on the ERC721 non-fungible token standard and was written in Solidity utilizing the [OpenZeppelin](https://www.openzeppelin.com/) library and [Hardhat](https://hardhat.org/) Ethereum development suite.
 
-Tokens can can not only be minted but put up for sale for an individual price by the owner. If a token is resold, the contract collects a 10% fee.
+Tokens can not only be minted but put up for sale for an individual price by the owner. If a token is resold, the contract collects a 10% fee.
 
 You can use basic Hardhat commands like:
 
@@ -36,9 +36,8 @@ You can use basic Hardhat commands like:
 - `npx hardhat compile`
 - `npx hardhat node`
 - `npx hardhat test`
-- `npx hardhat help`
 
-There are some helper scripts available, too:
+There are some helper scripts available too:
 
 - `npx hardhat run scripts/deploy.js --network <localhost|mainnet|rinkeby>`
 - `npx hardhat run scripts/fund.js --network <localhost|mainnet|rinkeby>`
@@ -47,7 +46,7 @@ There are some helper scripts available, too:
 
 Most of the scripts require the same environment variables as the backend (for the same reason).
 
-The `deploy.js` script additionally requires the private key of the address the contract should be deployed with to be available as `DAPK`.
+When deploying to a public network, the `deploy.js` script additionally requires the private key of the address the contract should be deployed with to be available as `DAPK`.
 
 The `fund.js` script simply transfers 10 ETH from the contract owner address to an address found in in the `ADDRESS_TO_FUND` environment variable for testing purposes.
 
