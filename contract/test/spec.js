@@ -174,24 +174,24 @@ describe('NNFT', () => {
 
     expect(await nnft.ownerOf(99)).to.equal(addr2.address)
 
-    await nnft.connect(addr2).placeAd(99, ethers.utils.parseEther('1'))
+    await nnft.connect(addr2).placeAd(99, ethers.utils.parseEther('5.0'))
 
     expect(
       await nnft
         .connect(addr3)
         .getAd(99)
         .then(bigint => ethers.utils.formatEther(bigint))
-    ).to.equal('1.0')
+    ).to.equal('5.0')
 
     await expect(
       nnft
         .connect(addr3)
-        .buyToken(99, { value: ethers.utils.parseEther('0.1') })
+        .buyToken(99, { value: ethers.utils.parseEther('4.9') })
     ).to.be.revertedWith('Insufficient payment')
 
     await nnft
       .connect(addr3)
-      .buyToken(99, { value: ethers.utils.parseEther('1.0') })
+      .buyToken(99, { value: ethers.utils.parseEther('5.0') })
 
     expect(await nnft.ownerOf(99)).to.equal(addr3.address)
 
@@ -201,6 +201,13 @@ describe('NNFT', () => {
         .getAd(99)
         .then(bigint => ethers.utils.formatEther(bigint))
     ).to.equal('0.0')
+
+    expect(
+      await nnft
+        .connect(addr3)
+        .getBalance()
+        .then(bigint => ethers.utils.formatEther(bigint))
+    ).to.equal('0.6')
   })
 
   it("Can't buy tokens existing but not advertised", async () => {
