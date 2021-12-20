@@ -15,28 +15,29 @@ const allowAdr = process.env.ALLOW_LOGS.split(',').map(addr =>
   addr.toLowerCase()
 )
 
-const provider =
-  process.env.NODE_ENV === 'production'
-    ? ethers.getDefaultProvider('rinkeby', {
-      etherscan: process.env.ETHERSCAN_API_KEY,
-      infura: {
-        projectId: process.env.INFURA_ID,
-        projectSecret: process.env.INFURA_SECRET
-      }
-    })
-    : ethers.getDefaultProvider('http://localhost:8545')
+const prod = process.env.NODE_ENV === 'production'
+
+const provider = prod
+  ? ethers.getDefaultProvider('rinkeby', {
+    etherscan: process.env.ETHERSCAN_API_KEY,
+    infura: {
+      projectId: process.env.INFURA_ID,
+      projectSecret: process.env.INFURA_SECRET
+    }
+  })
+  : ethers.getDefaultProvider('http://localhost:8545')
 
 const contract = new ethers.Contract(
   address.address,
   artifact.abi,
-  provider.getSigner(0)
+  prod ? provider : provider.getSigner(0)
 )
 
 const getLogs = tokenId =>
   new Promise((resolve, reject) => {
     const needle = Object.keys(data)[Number(tokenId) - 1]
 
-    if (process.env.NODE_ENV === 'development') {
+    if (!prod) {
       return resolve(new Array(data[needle]).fill(`${needle} …`).join('\n'))
     }
 
