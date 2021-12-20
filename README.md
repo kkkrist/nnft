@@ -1,4 +1,4 @@
-# NirvanaNFT
+# #NirvanaNFT
 
 This is the source repository for the [#NirvanaNFT](https://nnft.club) project. Each of the 3000+ tokens available for minting is not only a cool NFT to trade and collect but provides the current owner with access to a day's worth of chat log of #nirvana on IRCnet between 2011 and 2021.
 
