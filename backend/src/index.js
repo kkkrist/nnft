@@ -13,11 +13,11 @@ const port = 3002
 app.use(cors())
 app.use(express.json())
 
-app.get(/^\/image\/(\d+)\.png$/, imageHandler)
+app.get(/^\/api\/image\/(\d+)\.png$/, imageHandler)
 
-app.post(/^\/log\/(\d+)$/, logHandler)
+app.post(/^\/api\/log\/(\d+)$/, logHandler)
 
-app.get(/^\/token\/(\d+)$/, tokenHandler)
+app.get(/^\/api\/token\/(\d+)$/, tokenHandler)
 
 app.listen(port, 'localhost', () => {
   console.log(`NNFT backend listening at http://localhost:${port}`)

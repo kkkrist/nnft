@@ -146,7 +146,7 @@ const TokenStatus = ({
         params: [message, account]
       })
       .then(signature =>
-        window.fetch(`${backendUri}/log/${tokenId}`, {
+        window.fetch(`${backendUri}log/${tokenId}`, {
           body: JSON.stringify({ message, signature }),
           headers: {
             'content-type': 'application/json'

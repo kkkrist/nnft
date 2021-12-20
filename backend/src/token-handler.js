@@ -15,7 +15,7 @@ const tokenHandler = (req, res, next) => {
   return res.send({
     name: `NNFT #${req.params[0]}`,
     description: `NNFT #${req.params[0]}`,
-    image: `${origin}image/${req.params[0]}.png`
+    image: `${origin}api/image/${req.params[0]}.png`
   })
 }
 

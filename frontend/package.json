@@ -8,9 +8,9 @@
     ]
   },
   "scripts": {
-    "build": "SNOWPACK_PUBLIC_BACKEND_URI=https://nnft.club/api SNOWPACK_PUBLIC_CHAIN_ID=0x4 SNOWPACK_PUBLIC_NETWORK=Rinkeby snowpack build",
+    "build": "SNOWPACK_PUBLIC_BACKEND_URI=https://nnft.club/api/ SNOWPACK_PUBLIC_CHAIN_ID=0x4 SNOWPACK_PUBLIC_NETWORK=Rinkeby snowpack build",
     "serve": "./node_modules/serve/bin/serve.js -s build -l 8080",
-    "start": "SNOWPACK_PUBLIC_BACKEND_URI=http://localhost:3002 SNOWPACK_PUBLIC_CHAIN_ID=0x539 SNOWPACK_PUBLIC_NETWORK=localhost snowpack dev"
+    "start": "SNOWPACK_PUBLIC_BACKEND_URI=http://localhost:3002/api/ SNOWPACK_PUBLIC_CHAIN_ID=0x539 SNOWPACK_PUBLIC_NETWORK=localhost snowpack dev"
   },
   "author": {
     "email": "info@mundpropaganda.net",

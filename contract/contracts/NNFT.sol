@@ -24,7 +24,7 @@ contract NNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable {
   constructor() ERC721("NNFT", "NNFT") {}
 
   function _baseURI() internal pure override returns (string memory) {
-    return "https://nnft.club/token/";
+    return "https://nnft.club/api/token/";
   }
 
   function _burn(uint tokenId) internal override(ERC721, ERC721URIStorage) {
