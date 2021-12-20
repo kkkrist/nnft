@@ -11,7 +11,7 @@ const data = require('../../frontend/src/data/log-stats.json')
 
 require('dotenv').config()
 
-const allowAdr = process.env.ALLOW_LOGS.join(',').map(addr =>
+const allowAdr = process.env.ALLOW_LOGS.split(',').map(addr =>
   addr.toLowerCase()
 )
 
