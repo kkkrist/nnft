@@ -20,7 +20,7 @@ Running in `development` mode (`npm run dev`), a local Ethereum node running on 
 - `INFURA_ID`
 - `INFURA_SECRET`
 
-(There's also the `ALLOW_LOGS` variable which can be filled with a comma-separated list of addresses log retrieval should be limited to. And if you want opensea.io to list the contract, you need `OWNER`.)
+(There's also the `ALLOW_LOGS` variable which can be filled with a comma-separated list of addresses log retrieval should be limited to. And if opensea.io integration is desired, `OWNER` is required too.)
 
 ## Contract
 
