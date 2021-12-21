@@ -74,8 +74,9 @@ const logHandler = async (req, res, next) => {
     const signer = ethers.utils.verifyMessage(
       req.body.message,
       req.body.signature
-    )
-    const owner = await contract.ownerOf(Number(req.params[0]))
+    ).toLowerCase()
+
+    const owner = (await contract.ownerOf(Number(req.params[0]))).toLowerCase()
 
     if (signer !== owner || !allowAdr.includes(signer)) {
       return res.status(403).end()
