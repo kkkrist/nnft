@@ -144,6 +144,8 @@ const App = () => {
           .catch(errorHandler)
       }
 
+      refreshInventory()
+
       const filter = {
         address: address.address,
         topics: [ethers.utils.id('Transfer(address,address,uint256)')]
