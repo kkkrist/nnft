@@ -70,7 +70,7 @@ contract NNFT is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable {
     emit TokenBought(seller, msg.sender, tokenId);
   }
 
-  function contractURI() public pure view returns (string memory) {
+  function contractURI() public pure returns (string memory) {
     return "https://nnft.club/api/contract";
   }
 
