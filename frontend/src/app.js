@@ -248,8 +248,17 @@ const App = () => {
           html`
             <p>
               Contract balance: ${contractInfo.balance} ETH.${' '}
-              <button onClick=${handleWithdraw} type="button">
-                (withdraw!)
+
+              <button onClick=${handleWithdraw} tw="mr-2" type="button">
+                withdraw
+              </button>
+
+              <button onClick=${() => contract.pause()} tw="mr-2" type="button">
+                pause
+              </button>
+
+              <button onClick=${() => contract.unpause()} type="button">
+                unpause
               </button>
             </p>
           `}
