@@ -11,7 +11,7 @@ const contractHandler = (req, res, next) =>
     description: '#NirvanaNFT',
     image: `${origin}api/image/contract.png`,
     external_link: origin,
-    seller_fee_basis_points: 10,
+    seller_fee_basis_points: 1000,
     fee_recipient: process.env.OWNER
   })
 
