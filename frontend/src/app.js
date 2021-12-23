@@ -273,6 +273,16 @@ const App = () => {
           </a>
         </p>
 
+        <p>
+          OpenSea:${' '}
+          <a
+            href="https://testnets.opensea.io/collection/nirvananft"
+            target="_blank"
+          >
+            nirvananft
+          </a>
+        </p>
+
         <p tw="mb-4">
           Legal: This website is not inteded for public use.
         </p>
