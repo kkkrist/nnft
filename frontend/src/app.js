@@ -1,6 +1,7 @@
 /* global __SNOWPACK_ENV__ */
 import.meta.hot
 import { ethers } from 'ethers'
+import detectEthereumProvider from '@metamask/detect-provider'
 import { createContext, h, render } from 'preact'
 import { useCallback, useEffect, useState } from 'preact/hooks'
 import htm from 'htm'
@@ -308,9 +309,12 @@ const App = () => {
   `
 }
 
-render(
-  html`
-    <${App} />
-  `,
-  document.body
-)
+const init = () =>
+  render(
+    html`
+      <${App} />
+    `,
+    document.body
+  )
+
+detectEthereumProvider().then(init, console.error)
