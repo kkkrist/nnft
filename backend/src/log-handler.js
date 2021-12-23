@@ -71,10 +71,9 @@ const logHandler = async (req, res, next) => {
   }
 
   try {
-    const signer = ethers.utils.verifyMessage(
-      req.body.message,
-      req.body.signature
-    ).toLowerCase()
+    const signer = ethers.utils
+      .verifyMessage(req.body.message, req.body.signature)
+      .toLowerCase()
 
     const owner = (await contract.ownerOf(Number(req.params[0]))).toLowerCase()
 
