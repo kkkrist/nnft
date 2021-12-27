@@ -1,6 +1,6 @@
 # #NirvanaNFT
 
-This is the source repository for the [#NirvanaNFT](https://nnft.club) project. Each of the 3000+ tokens available for minting is not only a cool NFT to trade and collect but provides the current owner with access to a day's worth of chat log of #nirvana on IRCnet between 2011 and 2021.
+This is the source repository for the [#NirvanaNFT](https://nnft.club) project. Each of the 3000+ tokens available for minting is not only a cool NFT to trade and collect (no 3rd-party service needed) but provides the current owner with access to a day's worth of chat log of #nirvana on IRCnet between 2011 and 2021.
 
 To quote [Tim O'Reilly](https://www.oreilly.com/radar/why-its-too-early-to-get-excited-about-web3/):
 
@@ -12,7 +12,7 @@ The contract is meant to be deployed on the Rinkeby Ethereum test network.
 
 ## Backend
 
-The backend constists of a Node.js server to provide endpoints for token meta data, token image referenced therein and retrieval of chat log represented by a token. Requests to the latter need to be signed by the current token owner. The token image endpoint requires [ImageMagick](https://imagemagick.org/index.php) to be available on the host. See source code for details.
+The backend constists of a Node.js server to provide endpoints for meta data, token image referenced therein and retrieval of chat log represented by a token. Requests to the latter need to be signed by the current token owner. The token image endpoint requires [ImageMagick](https://imagemagick.org/index.php) to be available on the host. See source code for details.
 
 Running in `development` mode (`npm run dev`), a local Ethereum node running on port 8545 is assumed and queried directly. When using public networks in `production` mode (`npm start`), the contract is queried using external service APIs. Put credentials for these services ([Etherscan](https://etherscan.io/) and [Infura](https://infura.io/)) in a local `.env` file to make them available as environment variables:
 
