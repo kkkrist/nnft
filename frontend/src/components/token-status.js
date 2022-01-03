@@ -16,6 +16,7 @@ const TokenStatus = ({
   backendUri,
   addNotification,
   errorHandler,
+  ethereum,
   tokenId
 }) => {
   const contract = useContext(ContractContext)
@@ -140,7 +141,7 @@ const TokenStatus = ({
 
     const message = `I am the current owner of token #${tokenId}`
 
-    window.ethereum
+    ethereum
       .request({
         method: 'personal_sign',
         params: [message, account]

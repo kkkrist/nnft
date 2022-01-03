@@ -33,13 +33,13 @@ const getDate = search => {
 
 export const ContractContext = createContext(null)
 
-const App = () => {
+const App = ({ ethereum }) => {
   const [accounts, setAccounts] = useState([])
   const [contract, setContract] = useState()
   const [contractInfo, setContractInfo] = useState({ owner: '0x' })
   const [date, setDate] = useState(getDate(window.location.search))
   const [inventory, setInventory] = useState([])
-  const [network, setNetwork] = useState(window.ethereum?.chainId)
+  const [network, setNetwork] = useState(ethereum?.chainId)
   const [notifications, setNotifications] = useState([])
 
   const removeNotification = useCallback(
@@ -99,16 +99,16 @@ const App = () => {
       }
     }
 
-    window.ethereum?.on('chainChanged', changeNetwork)
-    return () => window.ethereum.removeListener('chainChanged', changeNetwork)
-  }, [addNotification, network, removeNotification])
+    ethereum?.on('chainChanged', changeNetwork)
+    return () => ethereum.removeListener('chainChanged', changeNetwork)
+  }, [addNotification, ethereum, network, removeNotification])
 
   useEffect(() => {
     if (network !== SNOWPACK_PUBLIC_CHAIN_ID) {
       return
     }
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const provider = new ethers.providers.Web3Provider(ethereum)
 
     let currentContract
     try {
@@ -155,7 +155,14 @@ const App = () => {
       currentContract.on(filter, refreshInventory)
       return () => currentContract.off(filter, refreshInventory)
     }
-  }, [accounts, addNotification, errorHandler, network, removeNotification])
+  }, [
+    accounts,
+    addNotification,
+    errorHandler,
+    ethereum,
+    network,
+    removeNotification
+  ])
 
   useEffect(() => {
     if (date) {
@@ -296,6 +303,7 @@ const App = () => {
           backendUri=${SNOWPACK_PUBLIC_BACKEND_URI}
           date=${date}
           errorHandler=${errorHandler}
+          ethereum=${ethereum}
           resetDate=${() => setDate('')}
         />
       </${ContractContext.Provider}>
@@ -309,10 +317,10 @@ const App = () => {
   `
 }
 
-const init = () =>
+const init = ethereum =>
   render(
     html`
-      <${App} />
+      <${App} ethereum=${ethereum} />
     `,
     document.body
   )

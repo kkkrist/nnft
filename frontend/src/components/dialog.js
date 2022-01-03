@@ -14,6 +14,7 @@ const Dialog = ({
   backendUri,
   date = '',
   errorHandler,
+  ethereum,
   resetDate
 }) => {
   const index = Object.keys(data).findIndex(d => d === date)
@@ -72,6 +73,7 @@ const Dialog = ({
                 addNotification=${addNotification}
                 backendUri=${backendUri}
                 errorHandler=${errorHandler}
+                ethereum=${ethereum}
                 tokenId=${index + 1}
               />
             ` : html`
