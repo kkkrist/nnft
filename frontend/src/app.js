@@ -298,7 +298,7 @@ const App = ({ ethereum }) => {
 
       <${ContractContext.Provider} value=${contract}>
         <${Dialog}
-          account=${accounts[0]}
+          account=${accounts[0]?.toLowerCase()}
           addNotification=${addNotification}
           backendUri=${SNOWPACK_PUBLIC_BACKEND_URI}
           date=${date}
