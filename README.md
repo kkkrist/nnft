@@ -63,6 +63,6 @@ and is bundled into browser-native JavaScript modules with [Snowpack](https://ww
 
 - `npm run dev`: runs a local dev server with hot-module-reloading
 - `npm run build`: builds all static assets for deploying into `build/`
-- `npm run serve`: servers up `build/` for testing purposes
+- `npm run serve`: serves up `build/` for testing purposes
 
 Have fun!

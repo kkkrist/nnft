@@ -292,7 +292,7 @@ const App = ({ ethereum }) => {
         </p>
 
         <p tw="mb-4">
-          Legal: This website is not inteded for public use.
+          Legal: This website is not intended for public use.
         </p>
       </div>
 
